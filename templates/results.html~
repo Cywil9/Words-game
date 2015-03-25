@@ -1,0 +1,22 @@
+
+{% extends "base.html" %}
+
+{% block the_body %}
+
+<table style="width:100%">
+
+    {% for word, result in the_wordResults %}
+    <tr>
+        <td>{{ word }}</td>
+        <td>{{ result }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<p>
+Play <a href="{{game_url}}">again</a>.
+</p>
+<p>
+Go to the <a href={{home_url}}>home</a> page.
+</p>
+{% endblock %}

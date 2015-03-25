@@ -1,0 +1,70 @@
+body {
+  font-family:      Verdana, Geneva, Arial, sans-serif;
+  font-size:        medium;
+  background-color: #CCFFFF;
+}
+a {
+  text-decoration:  none; 
+  font-weight:      600; 
+  color:            #3366CC;
+}
+a:hover {
+  text-decoration:  underline;
+}
+a img {
+  border:           0;
+}
+h2 {
+  font-weight:      normal;
+  color:            #3366CC;
+  font-size:        150%;
+}
+table {
+  margin-left:      20px;
+  margin-right:     20px;
+  caption-side:     bottom;
+  border-collapse:  collapse;
+  
+}
+td, th {
+  padding:          5px;
+  text-align:       left;
+}
+textarea {
+  font-family:      Verdana, Geneva, Arial, sans-serif;
+}
+.copyright {
+  font-size:        90%;
+  font-style:       italic;
+  color:            #3366CC;
+}
+.slogan {
+  font-size:        75%;
+  font-style:       italic;
+}
+
+/*** Tables ***/
+
+table {
+font-size:1em;
+background-color:#fafcff;
+border:1px solid #909090;
+color:#2a2a2a;
+padding:5px 5px 2px;
+border-collapse: collapse;
+}
+
+td, th {
+border: thin dotted gray;
+}
+
+/*** Inputs ***/
+input[type=text] {
+  font-size:    115%
+}
+input[type=submit] {
+  font-size:    115%
+}
+select {
+  font-size:    125%
+}

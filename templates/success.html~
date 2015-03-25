@@ -1,0 +1,19 @@
+
+{% extends "base.html" %}
+
+{% block the_body %}
+
+<form action="{{ the_username_url }}" method="POST" autocomplete="off">
+    <p>
+        Your time is {{ the_time }}
+    </p>
+    <p>
+        Please enter your name: 
+        <input type="TEXT" name="user_name">
+    </p>
+    <p>
+        <input type="SUBMIT" value="Submit">
+    </p>
+
+</form>
+{% endblock %}

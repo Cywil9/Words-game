@@ -1,0 +1,49 @@
+
+{% extends "base.html" %}
+
+{% block the_body %}
+
+<form action="{{ the_save_url }}" method="POST" autocomplete="off">
+    <input type = "hidden" name = "sourceW" value = "{{the_source}}">
+    <p>
+    Game started at: <b>{{the_startTime}}</b>
+    </p>   
+    <p>
+    Source word is <b>{{the_source}}</b>
+    </p>
+    <p>
+    Word 1: 
+    <input type="TEXT" name="word">
+    </p>
+    <p>
+    Word 2: 
+    <input type="TEXT" name="word">
+    </p>
+    <p>
+    Word 3: 
+    <input type="TEXT" name="word">
+    </p>
+    <p>
+    Word 4: 
+    <input type="TEXT" name="word">
+    </p>
+    <p>
+    Word 5: 
+    <input type="TEXT" name="word">
+    </p>
+    <p>
+    Word 6: 
+    <input type="TEXT" name="word">
+    </p>
+    <p>
+    Word 7: 
+    <input type="TEXT" name="word">
+    </p>
+
+    <p>
+    <input type="SUBMIT" value="Submit">
+    </p>
+
+</form>
+
+{% endblock %}

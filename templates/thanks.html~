@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block the_body %}
+
+<p>
+Well done.
+</p>
+
+Go <a href={{home_link}}>Home</a>
+
+{% endblock %}

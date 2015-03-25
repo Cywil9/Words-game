@@ -1,0 +1,42 @@
+
+{% extends "base.html" %}
+
+{% block the_body %}
+
+{% if the_username %}
+    <p>
+    {{ the_username }}, your time is: {{ the_time }} seconds.
+    </p>
+{% endif %}
+
+{% if the_pos %}
+<p>
+You placed {{ the_pos }}.
+</p>
+{% endif %}
+
+<table style="width:50%">
+    <tr>
+        <th><b>Place</b></th>
+        <th><b>Time</b></th>
+        <th><b>Name</b></th>
+    </tr>
+        {%set i = 1 %}
+        {% for time, username in the_top10 %}
+            <tr>
+                <td>{{ i }}</td>
+                <td>{{ time }}</td>
+                <td>{{ username }}</td>
+            </tr>
+        {% set i = i +1 %}
+        {% endfor %}
+</table>
+
+<p>
+{{ play_msg }} <a href={{game_url}}>Play</a>
+</p>
+
+<p>
+Go to the <a href={{home_url}}>home</a> page.
+</p>
+{% endblock %}
