@@ -5,12 +5,11 @@ import random
 import time
 import datetime
 import contains
+import os
 
 from threading import Thread
 
 app = Flask(__name__)
-
-wordsfile = "/usr/share/dict/american-english"
 
 @app.route('/')
 def display_home():
@@ -77,7 +76,7 @@ def username():
         session['username'] = "Guest"
 
     topRec = []
-    with open('top.txt', 'r') as top:
+    with open(os.path.dirname(os.path.realpath(__file__))+"/top.txt", 'r') as top:
         the_top = top.read().splitlines()
 
     for row in the_top:
@@ -94,14 +93,14 @@ def username():
     for row in topRec:
         topRecStr += "\t".join(map(str, row)) + "\n"
 
-    with open('top.txt', 'w') as top:
+    with open(os.path.dirname(os.path.realpath(__file__))+"/top.txt", 'w') as top:
         print(topRecStr, file=top)
 
 
     times =[]
     names =[]
     count =0
-    with open('top.txt') as f:
+    with open(os.path.dirname(os.path.realpath(__file__))+"/top.txt") as f:
         f_reader = csv.reader(f, delimiter="\t")
         for row in f_reader:
             if len(row):
@@ -130,7 +129,7 @@ def top10():
     times =[]
     names =[]
     count =0
-    with open('top.txt') as f:
+    with open(os.path.dirname(os.path.realpath(__file__))+"/top.txt") as f:
         f_reader = csv.reader(f, delimiter="\t")
         for row in f_reader:
             if len(row):
@@ -150,7 +149,7 @@ def top10():
 def randWord():
     line = ""
     while len(line.strip()) < 8:
-        line = random.choice(open(wordsfile).readlines())
+        line = random.choice(open(os.path.dirname(os.path.realpath(__file__))+"/words.txt").readlines())
     return line
 
 def wordCheck(sourceWord, word):
@@ -158,7 +157,7 @@ def wordCheck(sourceWord, word):
     word = word.lower()
     word = word.strip()
 
-    with open(wordsfile, "r") as myWords:
+    with open(os.path.dirname(os.path.realpath(__file__))+"/words.txt", "r") as myWords:
         allWords = myWords.read().splitlines()
 
     if word == "":
@@ -185,4 +184,4 @@ def wordCheck(sourceWord, word):
 
 
 app.config['SECRET_KEY'] = 'supersecret'
-app.run(debug=True)
+#app.run(debug=True)
